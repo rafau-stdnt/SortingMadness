@@ -10,36 +10,27 @@ public interface ClientService {
 
     /**
     * Create new client
-    * @param client - client to create
     */
     void create(Client client);
 
     /**
-     * Возвращает список всех имеющихся клиентов
-     * @return список клиентов
+     * return whole list of clients
      */
     List<Client> readAll();
 
     /**
-     * Возвращает клиента по его ID
-     * @param id - ID клиента
-     * @return - объект клиента с заданным ID
+     * return client by ID
      */
     Client read(int id);
 
     /**
-     * Обновляет клиента с заданным ID,
-     * в соответствии с переданным клиентом
-     * @param client - клиент в соответсвии с которым нужно обновить данные
-     * @param id - id клиента которого нужно обновить
-     * @return - true если данные были обновлены, иначе false
+     * update client with given ID
+     * in accordance with the passed client
      */
     boolean update(Client client, int id);
 
     /**
-     * Удаляет клиента с заданным ID
-     * @param id - id клиента, которого нужно удалить
-     * @return - true если клиент был удален, иначе false
+     * delete client with given ID
      */
     boolean delete(int id);
 
