@@ -10,7 +10,7 @@ An application for sorting data sets using various algorithms. It is intended to
 
 **Rafał Stróżyk - [151793](https://usosweb.put.poznan.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=105473)**
 
-**Jędrzej Mikołajczyk - [nr_ind](https://usosweb.put.poznan.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=105230)**
+**Jędrzej Mikołajczyk - [151550](https://usosweb.put.poznan.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=105230)**
 
 ---
 
