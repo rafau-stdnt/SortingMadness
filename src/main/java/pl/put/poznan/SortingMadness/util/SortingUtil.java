@@ -43,7 +43,7 @@ public class SortingUtil {
                 SelectionSort.sort(array, descending);
                 time = SelectionSort.getTime();
                 break;
-            // Добавьте другие алгоритмы, если необходимо
+            // TODO: kolejne algorytmy
             default:
                 throw new IllegalArgumentException("Unknown sorting algorithm: " + algorithm);
         }
