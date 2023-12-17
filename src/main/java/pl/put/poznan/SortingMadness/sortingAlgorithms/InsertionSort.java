@@ -4,10 +4,21 @@ public class InsertionSort {
 
     private static long time;
 
+    /**
+     * Get the value of time.
+     *
+     * @return the time value
+     */
     public static long getTime() {
         return time;
     }
 
+    /**
+     * Sorts an array of comparable elements in ascending or descending order.
+     *
+     * @param  array      the array to be sorted
+     * @param  descending true to sort in descending order, false to sort in ascending order
+     */
     public static <T extends Comparable<T>> void sort(T[] array, boolean descending) {
         long startTime = System.nanoTime();
 
