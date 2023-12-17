@@ -30,7 +30,7 @@ public class Controller {
             Object[] arr = inputData.getArray();
             String order = inputData.getOrder();
             String algorithm = inputData.getAlgorithm();
-            json_order = order.toLowerCase();
+            json_order = order;
             json_algorithm = algorithm;
 
             if (arr.length > 0) {
