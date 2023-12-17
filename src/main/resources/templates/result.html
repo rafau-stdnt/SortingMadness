@@ -4,13 +4,15 @@
     <title>Sorting Result</title>
 </head>
 <body>
-    <h2>Algorithms:</h2>
-        <p th:if="${array != null and array.size() > 0}">
-            Sorted Array
-            <span th:if="${order == 'arrayDesc'}">(desc):</span>
-            <span th:utext="${array.get(0)}"></span>
-            <span th:if="${time != null}">Execution Time: <span th:text="${time}"></span> Milliseconds</span>
-        </p>
-        <p th:if="${array == null or array.size() == 0}">No data available</p>
+<h2>Algorithms:</h2>
+<p th:if="${array != null and array.size() > 0}">
+    Sorted Array
+    <span th:if="${algorithm != null}">Algorithm: <span th:text="${algorithm}"></span></span>
+    <span th:if="${order == 'desc'}">(desc):</span>
+    <span th:utext="${array.get(0)}"></span>
+    <span th:if="${time != null}">Execution Time: <span th:text="${time}"></span> Milliseconds</span>
+    <br/>
+</p>
+<p th:if="${array == null or array.size() == 0}">No data available</p>
 </body>
 </html>

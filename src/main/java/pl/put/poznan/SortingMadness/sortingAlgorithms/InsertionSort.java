@@ -1,12 +1,11 @@
-// InsertionSort.java
 package pl.put.poznan.SortingMadness.sortingAlgorithms;
 
 public class InsertionSort {
 
     private static long time;
 
-    public static String getTime() {
-        return String.format("%.3f", time / 1000000.0);
+    public static long getTime() {
+        return time;
     }
 
     public static <T extends Comparable<T>> void sort(T[] array, boolean descending) {
