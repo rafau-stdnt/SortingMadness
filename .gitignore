@@ -32,7 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-
 # edit gitignore for Java
 # Compiled class file
 *.class
