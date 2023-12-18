@@ -1,7 +1,9 @@
 package pl.put.poznan.SortingMadness.util;
 
 import pl.put.poznan.SortingMadness.sortingAlgorithms.BubbleSort;
+import pl.put.poznan.SortingMadness.sortingAlgorithms.HeapSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.InsertionSort;
+import pl.put.poznan.SortingMadness.sortingAlgorithms.MergeSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.QuickSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.SelectionSort;
 
@@ -73,7 +75,14 @@ public class SortingUtil {
                 QuickSort.sort(array, descending);
                 time = QuickSort.getTime();
                 break;
-            // TODO: kolejne algorytmy
+            case "mergesort":
+                MergeSort.sort(array, descending);
+                time = MergeSort.getTime();
+                break;
+            case "heapsort":
+                HeapSort.sort(array, descending);
+                time = HeapSort.getTime();
+                break;
             default:
                 throw new IllegalArgumentException("Unknown sorting algorithm: " + algorithm);
         }
