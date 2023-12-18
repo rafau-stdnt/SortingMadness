@@ -24,6 +24,12 @@ public class Controller {
         return "TODO";
     }
 
+    /**
+     * Sorts the given array using the specified algorithm and order.
+     *
+     * @param  inputData  the input data containing the array, algorithm, and order
+     * @return            the sorted array as a string
+     */
     @PostMapping("/sort")
     public ResponseEntity<String> sort(@RequestBody InputData inputData) {
         try {
@@ -48,6 +54,12 @@ public class Controller {
         }
     }
 
+    /**
+     * Retrieves the sorted array, order, time, and algorithm, and sets them as attributes in the ModelAndView object.
+     *
+     * @param  modelAndView   the ModelAndView object to which the attributes will be added
+     * @return                the ModelAndView object with the attributes set
+     */
     @GetMapping("/sort")
     public ModelAndView showResult(ModelAndView modelAndView) {
         modelAndView.addObject("array", sortedArray);
