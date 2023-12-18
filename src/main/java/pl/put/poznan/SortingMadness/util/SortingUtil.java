@@ -57,11 +57,11 @@ public class SortingUtil {
      */
     private static <T extends Comparable<T>> void sort(T[] array, String algorithm, boolean descending) {
         switch (algorithm.toLowerCase()) {
-            case "insertion":
+            case "insertionsort":
                 InsertionSort.sort(array, descending);
                 time = InsertionSort.getTime();
                 break;
-            case "selection":
+            case "selectionsort":
                 SelectionSort.sort(array, descending);
                 time = SelectionSort.getTime();
                 break;
