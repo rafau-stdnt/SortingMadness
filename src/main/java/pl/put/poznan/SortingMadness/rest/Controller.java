@@ -1,14 +1,14 @@
 package pl.put.poznan.SortingMadness.rest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.put.poznan.SortingMadness.data.InputData;
 import pl.put.poznan.SortingMadness.util.SortingUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @RestController
 @RequestMapping("/SortingMadness")
@@ -54,6 +54,7 @@ public class Controller {
         }
     }
 
+
     /**
      * Retrieves the sorted array, order, time, and algorithm, and sets them as attributes in the ModelAndView object.
      *
@@ -69,4 +70,30 @@ public class Controller {
         modelAndView.setViewName("result");
         return modelAndView;
     }
+
+    /**
+     * Retrieves a sorted array as JSON.
+     *
+     * @return        The response entity containing the JSON representation of the sorted array.
+     */
+    @GetMapping("/json")
+    public ResponseEntity<Object> getSortedArrayAsJson() {
+        if (sortedArray != null && !sortedArray.isEmpty()) {
+            String algorithm = json_algorithm;
+            String order = json_order;
+
+            Map<String, Object> outputData = new HashMap<>();
+            outputData.put("algorithm", algorithm);
+            outputData.put("order", order);
+            outputData.put("sortedArray", sortedArray.get(0));
+
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(outputData);
+        } else {
+            return ResponseEntity.badRequest().body("Invalid data");
+        }
+    }
+
 }
+
