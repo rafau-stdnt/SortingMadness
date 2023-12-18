@@ -4,10 +4,22 @@ public class MergeSort {
 
     private static long time;
 
+    /**
+     * Returns the value of the time variable.
+     *
+     * @return the value of the time variable
+     */
     public static long getTime() {
         return time;
     }
 
+
+    /**
+     * Sorts the given array in ascending or descending order using merge sort algorithm.
+     *
+     * @param  array      the array to be sorted
+     * @param  descending true if the array should be sorted in descending order, false otherwise
+     */
     public static <T extends Comparable<T>> void sort(T[] array, boolean descending) {
         long startTime = System.nanoTime();
 
@@ -17,6 +29,12 @@ public class MergeSort {
         time = endTime - startTime;
     }
 
+    /**
+     * Sorts an array using the merge sort algorithm.
+     *
+     * @param  array      the array to be sorted
+     * @param  descending whether to sort the array in descending order
+     */
     private static <T extends Comparable<T>> void mergeSort(T[] array, boolean descending) {
         int n = array.length;
         if (n < 2) {
@@ -36,6 +54,14 @@ public class MergeSort {
         merge(array, leftArray, rightArray, descending);
     }
 
+    /**
+     * Merges two sorted arrays into one array in ascending or descending order.
+     *
+     * @param  array        the array to merge the sorted arrays into
+     * @param  leftArray    the first sorted array to merge
+     * @param  rightArray   the second sorted array to merge
+     * @param  descending   a flag indicating whether to merge in descending order
+     */
     private static <T extends Comparable<T>> void merge(T[] array, T[] leftArray, T[] rightArray, boolean descending) {
         int leftSize = leftArray.length;
         int rightSize = rightArray.length;

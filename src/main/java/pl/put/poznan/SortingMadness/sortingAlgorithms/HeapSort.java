@@ -3,10 +3,21 @@ package pl.put.poznan.SortingMadness.sortingAlgorithms;
 public class HeapSort {
     private static long time;
 
+    /**
+     * Returns the value of the time variable.
+     *
+     * @return the value of the time variable
+     */
     public static long getTime() {
         return time;
     }
 
+    /**
+     * Sorts an array of elements in ascending or descending order using the heap sort algorithm.
+     *
+     * @param  array      the array of elements to be sorted
+     * @param  descending true if the array should be sorted in descending order, false otherwise
+     */
     public static <T extends Comparable<T>> void sort(T[] array, boolean descending) {
         long startTime = System.nanoTime();
 
@@ -16,6 +27,12 @@ public class HeapSort {
         time = endTime - startTime;
     }
 
+    /**
+     * Sorts an array of elements in ascending or descending order using the heap sort algorithm.
+     *
+     * @param  array      the array of elements to be sorted
+     * @param  descending true if the array should be sorted in descending order, false otherwise
+     */
     private static <T extends Comparable<T>> void heapSort(T[] array, boolean descending) {
         int n = array.length;
 
@@ -32,6 +49,14 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Heapify the array from index i to n.
+     *
+     * @param  array      the array to be heapified
+     * @param  n          the size of the array
+     * @param  i          the starting index
+     * @param  descending true if the heap should be in descending order, false if in ascending order
+     */
     private static <T extends Comparable<T>> void heapify(T[] array, int n, int i, boolean descending) {
         int largest = i;
         int left = 2 * i + 1;

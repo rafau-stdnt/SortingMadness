@@ -32,7 +32,6 @@ public class SortingUtil {
                 return String.format("%.3f", MergeSort.getTime() / 1000000.0);
             case "heapsort":
                 return String.format("%.3f", HeapSort.getTime() / 1000000.0);
-            // Add more cases for other sorting algorithms...
             default:
                 return "Unknown algorithm";
         }

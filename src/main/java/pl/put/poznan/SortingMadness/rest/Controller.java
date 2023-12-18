@@ -21,7 +21,7 @@ public class Controller {
 
     @GetMapping
     public String hello() {
-        return "TODO";
+        return "/sort for see the result in html\n /json for see the result in json";
     }
 
     /**
@@ -73,7 +73,7 @@ public class Controller {
                         "Merge sort: " + SortingUtil.getTime("mergesort") + " milliseconds, " +
                         "Heap sort: " + SortingUtil.getTime("heapsort") + " milliseconds";
             } else if (arr.length > 0) {
-                // Process the case when a specific algorithm is provided
+
                 sortedArray = new ArrayList<>();
 
                 String result = SortingUtil.of(arr, algorithm, order);
