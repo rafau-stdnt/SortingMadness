@@ -1,3 +1,5 @@
+[![Java CI](https://github.com/rafau-stdnt/SortingMadness/actions/workflows/ci.yml/badge.svg)](https://github.com/rafau-stdnt/SortingMadness/actions/workflows/ci.yml)
+
 <img src="./images/put_logo_text.png" alt="Logo of the project" align="right">
 
 # Sorting Madness &middot; Project for IO 
