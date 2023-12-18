@@ -18,9 +18,26 @@ public class SortingUtil {
      *
      * @return the formatted time value as a string
      */
-    public static String getTime() {
-        return String.format("%.3f", time / 1000000.0);
+    public static String getTime(String algorithm) {
+        switch (algorithm.toLowerCase()) {
+            case "insertionsort":
+                return String.format("%.3f", InsertionSort.getTime() / 1000000.0);
+            case "selectionsort":
+                return String.format("%.3f", SelectionSort.getTime() / 1000000.0);
+            case "bubblesort":
+                return String.format("%.3f", BubbleSort.getTime() / 1000000.0);
+            case "quicksort":
+                return String.format("%.3f", QuickSort.getTime() / 1000000.0);
+            case "mergesort":
+                return String.format("%.3f", MergeSort.getTime() / 1000000.0);
+            case "heapsort":
+                return String.format("%.3f", HeapSort.getTime() / 1000000.0);
+            // Add more cases for other sorting algorithms...
+            default:
+                return "Unknown algorithm";
+        }
     }
+
 
     /**
      * Generates a string representation of the sorted array based on the specified algorithm and order.

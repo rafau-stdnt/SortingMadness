@@ -31,7 +31,7 @@ public class Controller {
      * @return            the sorted array as a string
      */
     @PostMapping("/sort")
-    public ResponseEntity<String> sort(@RequestBody InputData inputData) {
+    public ResponseEntity<?> sort(@RequestBody InputData inputData) {
         try {
             Object[] arr = inputData.getArray();
             String order = inputData.getOrder();
@@ -39,20 +39,56 @@ public class Controller {
             json_order = order;
             json_algorithm = algorithm;
 
-            if (arr.length > 0) {
+            if ("allsorts".equalsIgnoreCase(algorithm)) {
+                sortedArray = new ArrayList<>();
+
+                // Insertion Sort
+                String insertionSortResult = SortingUtil.of(arr, "insertionsort", order);
+                sortedArray.add("Insertion sort: " + insertionSortResult);
+
+                // Selection Sort
+                String selectionSortResult = SortingUtil.of(arr, "selectionsort", order);
+                sortedArray.add("Selection sort: " + selectionSortResult);
+
+                // Bubble Sort
+                String bubbleSortResult = SortingUtil.of(arr, "bubblesort", order);
+                sortedArray.add("Bubble sort: " + bubbleSortResult);
+
+                // Quick Sort
+                String quickSortResult = SortingUtil.of(arr, "quicksort", order);
+                sortedArray.add("Quick sort: " + quickSortResult);
+
+                // Merge Sort
+                String mergeSortResult = SortingUtil.of(arr, "mergesort", order);
+                sortedArray.add("Merge sort: " + mergeSortResult);
+
+                // Heap Sort
+                String heapSortResult = SortingUtil.of(arr, "heapsort", order);
+                sortedArray.add("Heap sort: " + heapSortResult);
+
+                json_time = "Insertion sort: " + SortingUtil.getTime("insertionsort") + " milliseconds, " +
+                        "Selection sort: " + SortingUtil.getTime("selectionsort") + " milliseconds, " +
+                        "Bubble sort: " + SortingUtil.getTime("bubblesort") + " milliseconds, " +
+                        "Quick sort: " + SortingUtil.getTime("quicksort") + " milliseconds, " +
+                        "Merge sort: " + SortingUtil.getTime("mergesort") + " milliseconds, " +
+                        "Heap sort: " + SortingUtil.getTime("heapsort") + " milliseconds";
+            } else if (arr.length > 0) {
+                // Process the case when a specific algorithm is provided
                 sortedArray = new ArrayList<>();
 
                 String result = SortingUtil.of(arr, algorithm, order);
                 sortedArray.add(result);
-                json_time = SortingUtil.getTime();
-                return ResponseEntity.ok(result);
+                json_time = SortingUtil.getTime(algorithm);
             } else {
                 return ResponseEntity.badRequest().body("Invalid data");
             }
+
+            return ResponseEntity.ok("Sorting completed");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Invalid JSON");
         }
     }
+
 
 
     /**
@@ -83,6 +119,7 @@ public class Controller {
             String order = json_order;
 
             Map<String, Object> outputData = new HashMap<>();
+            outputData.put("time", json_time);
             outputData.put("algorithm", algorithm);
             outputData.put("order", order);
             outputData.put("sortedArray", sortedArray.get(0));
