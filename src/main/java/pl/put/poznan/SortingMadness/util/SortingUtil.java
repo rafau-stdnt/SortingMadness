@@ -2,6 +2,7 @@ package pl.put.poznan.SortingMadness.util;
 
 import pl.put.poznan.SortingMadness.sortingAlgorithms.BubbleSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.InsertionSort;
+import pl.put.poznan.SortingMadness.sortingAlgorithms.QuickSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.SelectionSort;
 
 import java.util.Arrays;
@@ -67,6 +68,10 @@ public class SortingUtil {
             case "bubblesort":
                 BubbleSort.sort(array, descending);
                 time = BubbleSort.getTime();
+                break;
+            case "quicksort":
+                QuickSort.sort(array, descending);
+                time = QuickSort.getTime();
                 break;
             // TODO: kolejne algorytmy
             default:
