@@ -1,5 +1,6 @@
 package pl.put.poznan.SortingMadness.util;
 
+import pl.put.poznan.SortingMadness.sortingAlgorithms.BubbleSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.InsertionSort;
 import pl.put.poznan.SortingMadness.sortingAlgorithms.SelectionSort;
 
@@ -42,6 +43,10 @@ public class SortingUtil {
             case "selection":
                 SelectionSort.sort(array, descending);
                 time = SelectionSort.getTime();
+                break;
+            case "bubblesort":
+                BubbleSort.sort(array, descending);
+                time = BubbleSort.getTime();
                 break;
             // TODO: kolejne algorytmy
             default:
