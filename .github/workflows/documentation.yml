@@ -10,12 +10,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Deploy JavaDoc 🚀
-        uses: actions/setup-java@v2
+        uses: MathieuSoysal/Javadoc-publisher.yml@v2.3.0
         with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: maven
-      - name: Genrate
-        run: mvn javadoc:javadoc
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          javadoc-branch: javadoc
+          java-version: 17
+          target-folder: javadoc 
