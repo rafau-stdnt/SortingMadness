@@ -10,11 +10,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Deploy JavaDoc 🚀
-        uses: actions/checkout
+        uses: actions/setup-java@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          java-version: 17
-          project: maven # or gradle
-          # subdirectories: moduleA moduleB #for subdirectories support, needs to be run with custom command
+          java-version: '17'
+          distribution: 'adopt'
+          cache: maven
+      - name: Genrate
+        run: mvn javadoc:javadoc
