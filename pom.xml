@@ -36,22 +36,9 @@
 	<build>
 		<plugins>
 			<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-javadoc-plugin</artifactId>
-			<version>3.3.1</version>
-			<configuration>
-				<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-				<reportOutputDirectory>./</reportOutputDirectory>
-				<show>private</show>
-			</configuration>
-			<executions>
-				<execution>
-					<id>attach-javadocs</id>
-					<goals>
-						<goal>jar</goal>
-					</goals>
-				</execution>
-			</executions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
