@@ -22,11 +22,12 @@ jobs:
     - name: Build and Generate Javadoc
       run: |
         # Build your Maven project and generate Javadoc
-        mvn clean package javadoc:javadoc -Dmaven.javadoc.outputDirectory=documentation/
+        mvn clean package javadoc:javadoc
+
+        mv target documentation
         
         # Create a README file with a link to the generated Javadoc
         echo "Generated Javadoc: [Link](./documentation/docs/index.html)" >> test.txt
-        ls -la
 
     - name: Commit and Push Javadoc
       run: |
