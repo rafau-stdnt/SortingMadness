@@ -21,9 +21,9 @@ jobs:
 
     - name: Build and Generate Javadoc
       run: |
-        ls -la src/main/java/pl/put/poznan/SortingMadness
+        ls -la ./
         # Compile your Java code
-        javac -d target/classes src/*.java
+        javac -d target/classes ./src/*.java
         
         # Generate Javadoc
         javadoc -d target/docs -sourcepath src -subpackages main
