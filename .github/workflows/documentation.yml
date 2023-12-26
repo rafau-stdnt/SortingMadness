@@ -10,12 +10,12 @@ jobs:
     - name: Checkout the repo
       uses: actions/checkout@v3
 
-    - name: Checkout the gh-pages branch
+    - name: Checkout the javadoc branch
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        ref: gh-pages
-        path: gh-pages
+        ref: javadoc
+        path: javadoc
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
