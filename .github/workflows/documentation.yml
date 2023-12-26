@@ -21,12 +21,8 @@ jobs:
 
     - name: Build and Generate Javadoc
       run: |
-        ls -la ./
-        # Compile your Java code
-        javac -d target/classes ./src/*.java
-        
-        # Generate Javadoc
-        javadoc -d target/docs -sourcepath src -subpackages main
+        # Build your Maven project and generate Javadoc
+        mvn clean package javadoc:javadoc
         
         # Create a README file with a link to the generated Javadoc
         echo "Generated Javadoc: [Link](./target/docs/index.html)" >> test.txt
@@ -35,7 +31,7 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add target/docs
+        git add target/site/apidocs
         git commit -m "Generate Javadoc"
         git push
 
