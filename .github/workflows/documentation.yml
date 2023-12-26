@@ -32,4 +32,4 @@ jobs:
         java-version: '17'
 
     - name: Build docs with Maven
-      run: mvn compile javadoc:javadoc
+      run: mvn javadoc:javadoc
