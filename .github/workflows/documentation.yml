@@ -21,6 +21,7 @@ jobs:
 
     - name: Build and Generate Javadoc
       run: |
+        ls -la
         # Compile your Java code
         javac -d target/classes src/*.java
         
