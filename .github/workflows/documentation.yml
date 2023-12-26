@@ -1,17 +1,39 @@
-name: doc
+name: Generate Javadoc
 
-on: [push]
+on:
+  push:
+    branches:
+      - main # You can change this to your desired branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: maven
-      - name: Validate, build and run tests
-        run: mvn site
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17' # Change to your desired Java version
+
+    - name: Build and Generate Javadoc
+      run: |
+        # Compile your Java code
+        javac -d target/classes src/*.java
+        
+        # Generate Javadoc
+        javadoc -d target/docs -sourcepath src -subpackages main
+        
+        # Create a README file with a link to the generated Javadoc
+        echo "Generated Javadoc: [Link](./target/docs/index.html)" >> test.txt
+
+    - name: Commit and Push Javadoc
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add target/docs
+        git commit -m "Generate Javadoc"
+        git push
+
