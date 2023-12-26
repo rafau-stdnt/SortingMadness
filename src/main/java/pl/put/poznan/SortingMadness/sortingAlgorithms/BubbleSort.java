@@ -6,7 +6,7 @@ public class BubbleSort {
     /**
      * Get the current time.
      *
-     * @return  the current time in milliseconds
+     * @return the current time in milliseconds
      */
     public static long getTime() {
         return time;

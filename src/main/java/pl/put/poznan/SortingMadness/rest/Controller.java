@@ -28,7 +28,7 @@ public class Controller {
      * Sorts the given array using the specified algorithm and order.
      *
      * @param  inputData  the input data containing the array, algorithm, and order
-     * @return            the sorted array as a string
+     * @return the sorted array as a string
      */
     @PostMapping("/sort")
     public ResponseEntity<?> sort(@RequestBody InputData inputData) {
@@ -95,7 +95,7 @@ public class Controller {
      * Retrieves the sorted array, order, time, and algorithm, and sets them as attributes in the ModelAndView object.
      *
      * @param  modelAndView   the ModelAndView object to which the attributes will be added
-     * @return                the ModelAndView object with the attributes set
+     * @return the ModelAndView object with the attributes set
      */
     @GetMapping("/sort")
     public ModelAndView showResult(ModelAndView modelAndView) {
@@ -110,7 +110,7 @@ public class Controller {
     /**
      * Retrieves a sorted array as JSON.
      *
-     * @return        The response entity containing the JSON representation of the sorted array.
+     * @return The response entity containing the JSON representation of the sorted array.
      */
     @GetMapping("/json")
     public ResponseEntity<Object> getSortedArrayAsJson() {

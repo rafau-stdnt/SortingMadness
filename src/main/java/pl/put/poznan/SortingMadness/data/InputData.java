@@ -24,7 +24,7 @@ public class InputData {
     /**
      * Retrieves the order.
      *
-     * @return  the order
+     * @return the order
      */
     public String getOrder() {
         return order;
@@ -33,7 +33,7 @@ public class InputData {
     /**
      * Returns the algorithm used in the function.
      *
-     * @return  the algorithm used
+     * @return the algorithm used
      */
     public String getAlgorithm() {
         return algorithm;

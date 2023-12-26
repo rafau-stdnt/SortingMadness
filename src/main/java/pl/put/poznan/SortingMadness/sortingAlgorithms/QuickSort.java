@@ -52,7 +52,7 @@ public class QuickSort {
      * @param  low        the starting index of the partition
      * @param  high       the ending index of the partition
      * @param  descending determines whether the array should be sorted in descending order
-     * @return            the index of the pivot element after partitioning
+     * @return the index of the pivot element after partitioning
      */
     private static <T extends Comparable<T>> int partition(T[] array, int low, int high, boolean descending) {
         T pivot = array[high];

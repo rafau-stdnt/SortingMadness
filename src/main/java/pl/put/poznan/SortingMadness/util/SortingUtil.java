@@ -44,7 +44,7 @@ public class SortingUtil {
      * @param  array     the array to be sorted
      * @param  algorithm the sorting algorithm to use
      * @param  order     the order in which to sort the array ("asc" for ascending, "desc" for descending)
-     * @return           a string representation of the sorted array
+     * @return a string representation of the sorted array
      */
     public static <T extends Comparable<T>> String of(Object[] array, String algorithm, String order) {
         boolean descending = order != null && order.equalsIgnoreCase("desc");
