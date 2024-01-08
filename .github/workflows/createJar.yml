@@ -22,6 +22,7 @@ jobs:
       run: mkdir jarFiles && cp target/*jar jarFiles
     - name: Commit and Push jar files
       run: |
+        git status
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add jarFiles
