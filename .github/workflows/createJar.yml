@@ -19,14 +19,14 @@ jobs:
     - name: Validate, build and run tests
       run: mvn --batch-mode --update-snapshots verify
     - name: Build .jar
-      run: mkdir jarFiles && cp target/*jar jarFiles
+      run: |
+        mkdir /jarFiles
+        cp target/*jar /jarFiles
     - name: Commit and Push jar files
       run: |
-        ls -la jarFiles
-        git status
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add jarFiles
+        git add /jarFiles
         git commit -m "Generate jar files"
         git push
   
