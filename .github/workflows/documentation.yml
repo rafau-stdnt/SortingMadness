@@ -1,4 +1,4 @@
-name: Generate Javadoc files
+name: Generate Javadoc
 
 on:
   push:
@@ -25,12 +25,19 @@ jobs:
         mvn clean package javadoc:javadoc
         mv target documentation
         
-        # Create a README file with a link to the generated Javadoc
-        echo "Generated Javadoc: [Link](./documentation/docs/index.html)" >> test.txt
     - name: Commit and Push Javadoc
-      run: |
+      run: 
         git config user.name "GitHub Actions"
+    - name: Commit and Push Javadoc
+      run: 
         git config user.email "actions@github.com"
+    - name: Commit and Push Javadoc
+      run: 
         git add documentation
+
+    - name: Commit and Push Javadoc
+      run: 
         git commit -m "Generate Javadoc"
+    - name: Commit and Push Javadoc
+      run: 
         git push
