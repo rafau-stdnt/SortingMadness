@@ -1,0 +1,36 @@
+name: Generate Javadoc files
+
+on:
+  push:
+    branches:
+      - main # You can change this to your desired branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17' # Change to your desired Java version
+        distribution: 'adopt'
+
+    - name: Build and Generate Javadoc
+      run: |
+        # Build your Maven project and generate Javadoc
+        mvn clean package javadoc:javadoc
+        mv target documentation
+        
+        # Create a README file with a link to the generated Javadoc
+        echo "Generated Javadoc: [Link](./documentation/docs/index.html)" >> test.txt
+    - name: Commit and Push Javadoc
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add documentation
+        git commit -m "Generate Javadoc"
+        git push
