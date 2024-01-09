@@ -25,11 +25,7 @@ jobs:
         mvn clean package javadoc:javadoc
     - name: eles all
       run:
-        ls 
         ls target
-        
-        
-
     - name: eles
       run:
         mkdir -p jarFiles
