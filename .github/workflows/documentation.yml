@@ -23,7 +23,7 @@ jobs:
       run: |
         # Build your Maven project and generate Javadoc
         mvn clean package javadoc:javadoc
-        mkdir jarFiles
+        mkdir -p jarFiles
         cp target/*.jar jarFiles
         
         mv target package
