@@ -28,7 +28,7 @@ jobs:
         ls target
     - name: eles
       run:
-        mkdir -p jarFiles
+        mkdir -p package
         mv target package
 
     - name: Commit and Push Javadoc
