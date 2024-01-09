@@ -23,21 +23,16 @@ jobs:
       run: |
         # Build your Maven project and generate Javadoc
         mvn clean package javadoc:javadoc
+
         mv target documentation
         
-    - name: Commit and Push Javadoc
-      run: 
-        git config user.name "GitHub Actions"
-    - name: Commit and Push Javadoc
-      run: 
-        git config user.email "actions@github.com"
-    - name: Commit and Push Javadoc
-      run: 
-        git add documentation
+        # Create a README file with a link to the generated Javadoc
+        echo "Generated Javadoc: [Link](./documentation/docs/index.html)" >> test.txt
 
     - name: Commit and Push Javadoc
-      run: 
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add documentation
         git commit -m "Generate Javadoc"
-    - name: Commit and Push Javadoc
-      run: 
         git push
