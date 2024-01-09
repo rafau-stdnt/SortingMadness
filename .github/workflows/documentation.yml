@@ -25,9 +25,13 @@ jobs:
         mvn clean package javadoc:javadoc
         mkdir -p jarFiles
 
-        ls target
+        
         
         mv target package
+
+    - name: eles
+      run:
+        ls target
 
     - name: Commit and Push Javadoc
       run: |
@@ -36,3 +40,4 @@ jobs:
         git add .
         git commit -m "Generate Javadoc"
         git push
+  
