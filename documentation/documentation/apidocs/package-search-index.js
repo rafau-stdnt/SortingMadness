@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"pl.put.poznan.SortingMadness"},{"l":"pl.put.poznan.SortingMadness.data"},{"l":"pl.put.poznan.SortingMadness.rest"},{"l":"pl.put.poznan.SortingMadness.sortingAlgorithms"},{"l":"pl.put.poznan.SortingMadness.util"}];updateSearchResults();
