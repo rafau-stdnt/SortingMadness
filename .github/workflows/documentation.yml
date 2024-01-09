@@ -23,11 +23,9 @@ jobs:
       run: |
         # Build your Maven project and generate Javadoc
         mvn clean package javadoc:javadoc
-    - name: Build and Generate Javadoc
-      run: 
-        ls target
-    - name: Build and Generate Javadoc
-      run: 
+        mkdir jarFiles
+        touch jarFiles/test.txt
+        
         mv target package
 
     - name: Commit and Push Javadoc
