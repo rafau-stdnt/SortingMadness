@@ -24,7 +24,7 @@ jobs:
         # Build your Maven project and generate Javadoc
         mvn clean package javadoc:javadoc
         mkdir jarFiles
-        touch jarFiles/test.txt
+        cp target/*.jar jarFiles
         
         mv target package
 
