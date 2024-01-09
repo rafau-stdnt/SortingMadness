@@ -23,15 +23,17 @@ jobs:
       run: |
         # Build your Maven project and generate Javadoc
         mvn clean package javadoc:javadoc
-        mkdir -p jarFiles
+    - name: eles all
+      run:
+        ls 
 
         
         
-        mv target package
 
     - name: eles
       run:
-        ls target
+        mkdir -p jarFiles
+        mv target package
 
     - name: Commit and Push Javadoc
       run: |
